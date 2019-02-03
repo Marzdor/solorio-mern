@@ -1,0 +1,107 @@
+.contact {
+  &-container {
+    @mixin atSmall {
+      color: $sandyBrown;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+    @mixin atMedium {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px;
+      margin: 0 auto 50px auto;
+      justify-items: center;
+    }
+    @mixin atLarge {
+      width: 80%;
+    }
+    &-sub {
+      @mixin atMedium {
+        display: grid;
+      }
+      @mixin atLarge {
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+      }
+    }
+  }
+  &-form {
+    @mixin atSmall {
+      display: grid;
+      grid-template-columns: 1fr;
+      width: 100%;
+      grid-gap: 10px;
+      text-align: left;
+      margin: 10px 0 20px 0;
+    }
+    @mixin atMedium {
+      height: 50vh;
+      width: 90%;
+    }
+    @mixin atLarge {
+      width: 80%;
+    }
+    &-label {
+      @mixin atSmall {
+        display: grid;
+      }
+    }
+    &-textarea {
+      @mixin atSmall {
+        height: 20vh;
+      }
+    }
+  }
+  &-title {
+    @mixin atLarge {
+      grid-column: 1 / span 2;
+    }
+    &-sub {
+      @mixin atLarge {
+        margin: 10px 0;
+        grid-column: 1;
+      }
+    }
+  }
+  &-text {
+    @mixin atMedium {
+      margin: 0;
+    }
+    @mixin atLarge {
+      grid-column: 2;
+    }
+  }
+  &-address {
+    @mixin atMedium {
+      margin: 10px 0 0 0;
+    }
+    @mixin atLarge {
+      grid-column: 1 / span 2;
+      text-align: justify;
+    }
+  }
+  &-map {
+    @mixin atMedium {
+      margin: 0 0 0 10px;
+      width: 100%;
+      height: 250px;
+    }
+    @mixin atLarge {
+      grid-column: 1 / span 2;
+    }
+  }
+  &-hours {
+    @mixin atSmall {
+      text-transform: capitalize;
+    }
+    @mixin atMedium {
+      margin: 0;
+    }
+    @mixin atLarge {
+      grid-column: 2;
+      text-align: left;
+    }
+  }
+}

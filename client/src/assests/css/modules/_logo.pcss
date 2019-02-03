@@ -1,0 +1,78 @@
+#logo {
+  &-big {
+    @mixin atSmall {
+      display: none;
+    }
+    @mixin atLarge {
+      display: inline-block;
+    }
+  }
+  &-small {
+    @mixin atLarge {
+      display: none;
+    }
+  }
+}
+
+.logo {
+  @mixin atSmall {
+    content: $logoSmall;
+    width: 100px;
+    margin: 10px;
+  }
+  @mixin atMedium {
+    max-height: 75px;
+    max-width: 75px;
+  }
+  @mixin atLarge {
+    content: $logo;
+    max-height: 200px;
+    max-width: 200px;
+    height: 200px;
+    width: 200px;
+    margin: 0;
+  }
+  &-title {
+    @mixin atSmall {
+      margin: 10px 0;
+      color: $sandyBrown;
+    }
+    @mixin atMedium {
+      font-size: 1rem;
+      margin: 5px 0;
+    }
+    &-sub {
+      @mixin atSmall {
+        color: $sandyBrown;
+        padding: 0;
+        margin: 0;
+      }
+      @mixin atMedium {
+        font-size: 0.825rem;
+        padding: 0;
+        margin: 0 auto;
+      }
+    }
+  }
+  &-container {
+    @mixin atSmall {
+      width: 100%;
+      grid-column: 1 / span 4;
+      display: flex;
+      border-bottom: 5px solid $black;
+    }
+    @mixin atMedium {
+      justify-self: start;
+      grid-column: 1 / span 1;
+      border-bottom: none;
+      border-right: 5px solid $black;
+    }
+    &-sub {
+      @mixin atSmall {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.nav {
+  @mixin atSmall {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    background-color: $fireBrickDark;
+    border: 5px solid $black;
+  }
+  @mixin atMedium {
+    grid-template-columns: 50% repeat(3, 1fr);
+  }
+  @mixin atLarge {
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    padding-left: 150px;
+    margin: -125px 0 50px auto;
+  }
+  &-link {
+    @mixin atSmall {
+      padding: 10px 0;
+      color: $sandyBrown;
+    }
+    @mixin atMedium {
+    }
+  }
+}

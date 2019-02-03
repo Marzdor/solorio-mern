@@ -1,0 +1,67 @@
+{
+  "dios-del-dol": {
+    "name": "Dios del Sol",
+    "style": "Blonde Ale",
+    "abv": 5.3
+  },
+  "blue-lagoon": {
+    "name": "Blue Lagoon",
+    "style": "Blueberry Blonde Ale",
+    "abv": 5.3
+  },
+  "one-river": {
+    "name": "One River",
+    "style": "Bavarian Hefeweizen",
+    "abv": 5.1
+  },
+  "bee-knee": {
+    "name": "Bee's Knees",
+    "style": "Honey Cream Ale",
+    "abv": 5.8
+  },
+  "sol-elation": {
+    "name": "Sol Elation",
+    "style": "American Pale Ale",
+    "abv": 5.6
+  },
+  "cambrain-sunset": {
+    "name": "Cambrain Sunset",
+    "style": "Blood Orange Pale Ale",
+    "abv": 5.6
+  },
+  "puesta-de-sol": {
+    "name": "Puesta de Sol",
+    "style": "Amber Ale",
+    "abv": 6.0
+  },
+  "solar-eclipse": {
+    "name": "Solar Eclipse",
+    "style": "Chocolate Stout",
+    "abv": 5.4
+  },
+  "sunsation": {
+    "name": "Sunsation",
+    "style": "West Coast IPA",
+    "abv": 7.1
+  },
+  "stellarrio": {
+    "name": "StellarRio",
+    "style": "India Pale Lager",
+    "abv": 6.0
+  },
+  "rise-shine": {
+    "name": "Rise & Shine",
+    "style": "West Coast IPA",
+    "abv": 7.0
+  },
+  "guava": {
+    "name": "Guava",
+    "style": "West Coast IPA",
+    "abv": 7.0
+  },
+  "blood-orange": {
+    "name": "Blood Orange",
+    "style": "West Coast IPA",
+    "abv": 7.0
+  }
+}

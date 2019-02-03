@@ -1,0 +1,51 @@
+.menu {
+  &-container {
+    @mixin atSmall {
+      display: flex;
+      flex-direction: column;
+    }
+    @mixin atMedium {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    @mixin atLarge {
+      width: 80%;
+      margin: auto;
+    }
+    &-beer {
+      @mixin atSmall {
+        margin: 10px 0;
+        color: $sandyBrown;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  }
+  &-title {
+    @mixin atSmall {
+      margin: 5px 0;
+      font-size: 1.25rem;
+    }
+    &-sub {
+      @mixin atSmall {
+        font-size: 1rem;
+        margin: 0;
+      }
+    }
+  }
+  &-text {
+    @mixin atSmall {
+      font-size: 0.825rem;
+      margin: 0;
+    }
+  }
+  &-image {
+    @mixin atSmall {
+      grid-column: 2;
+      grid-row: 1 / span 5;
+    }
+  }
+}

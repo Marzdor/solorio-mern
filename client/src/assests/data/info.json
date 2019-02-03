@@ -1,0 +1,13 @@
+{
+  "email": "INFO@SOLORIOBREWING.COM",
+  "phone": "(909) 755-5400",
+  "hours": {
+    "monday": "Closed",
+    "tuesday": "Closed",
+    "wednesday": "4:00 - 9:00PM",
+    "thursday": "4:00 - 9:00PM",
+    "friday": "4:00 - 10:00PM",
+    "saturday": "4:00 - 10:00PM",
+    "sunday": "Closed"
+  }
+}

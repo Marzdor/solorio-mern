@@ -1,0 +1,51 @@
+.footer {
+  &-container {
+    @mixin atSmall {
+      background-color: $fireBrickDark;
+      padding: 5px;
+      border: 5px solid $black;
+    }
+    @mixin atLarge {
+      margin: 0 auto;
+      width: 80%;
+    }
+    &-social {
+      @mixin atSmall {
+        margin: 0 auto;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        grid-template-columns: repeat(4, 1fr);
+      }
+      @mixin atMedium {
+        grid-template-columns: repeat(3, 1fr) 50%;
+        width: 320px;
+      }
+    }
+  }
+  &-text {
+    @mixin atSmall {
+      color: $sandyBrown;
+      font-size: 1rem;
+      text-align: center;
+      margin: 5px 0;
+    }
+  }
+  &-link {
+    @mixin atSmall {
+      color: $sandyBrown;
+      font-size: 2rem;
+      padding: 0 10px;
+    }
+  }
+  &-card {
+    @mixin atSmall {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: $fireBrickDark;
+      background-color: $sandyBrown;
+      line-height: 1.5;
+      height: 30px;
+    }
+  }
+}

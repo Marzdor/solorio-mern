@@ -1,0 +1,29 @@
+.about {
+  &-container {
+    @mixin atSmall {
+      color: $sandyBrown;
+      margin: 0 0 20px 0;
+    }
+    @mixin atMedium {
+      margin: 0 0 50px 0;
+    }
+    @mixin atLarge {
+      width: 80%;
+      margin: 0 auto 50px auto;
+    }
+  }
+  &-title {
+    @mixin atSmall {
+      text-align: center;
+    }
+  }
+  &-text {
+    @mixin atSmall {
+      text-align: justify;
+      width: 90%;
+      margin: 0 auto;
+      text-indent: 20px;
+      line-height: 1.25;
+    }
+  }
+}
