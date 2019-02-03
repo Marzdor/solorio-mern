@@ -1,6 +1,6 @@
 import React from "react";
 import beer from "../data/menu.json";
-
+// TODO Get beer data from DB
 const beerElements = [];
 for (let key in beer) {
   beerElements.push(
@@ -20,7 +20,7 @@ for (let key in beer) {
   );
 }
 
-const Menu = props => {
+const Menu = () => {
   return <section className="menu-container">{beerElements}</section>;
 };
 
