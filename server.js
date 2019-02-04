@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require("path");
 
+const main = require("./routes/main");
+
 const app = express();
 
 // Bodyparser Middleware
@@ -28,7 +30,7 @@ mongoose
 mongoose.set("useFindAndModify", false);
 
 // Use routes
-// TODO Setup Routes
+app.use("/main", main);
 
 // Serve static assests if in production
 if (process.env.NODE_ENV === "production") {
