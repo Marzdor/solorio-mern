@@ -1,4 +1,4 @@
-/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
    ========================================================================== */
@@ -22,6 +22,14 @@ html {
 
 body {
   margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+
+main {
+  display: block;
 }
 
 /**
@@ -464,6 +472,13 @@ a {
     }
   }
 
+@media (min-width: 600px) {
+
+.menu-container--edit {
+        max-width: 70%
+    }
+  }
+
 @media (min-width: 320px) {
 
 .menu-title {
@@ -728,7 +743,7 @@ a {
 @media (min-width: 320px) {
 
 .logo {
-    content: url("./assests/images/solorio-logo-small.svg");
+    content: url("../images/solorio-logo-small.svg");
     width: 100px;
     margin: 10px
 }
@@ -745,7 +760,7 @@ a {
 @media (min-width: 1024px) {
 
 .logo {
-    content: url("./assests/images/solorio-logo.svg");
+    content: url("../images/solorio-logo.svg");
     max-height: 200px;
     max-width: 200px;
     height: 200px;
@@ -907,4 +922,63 @@ a {
       line-height: 1.5;
       height: 30px
   }
+  }
+
+@media (min-width: 320px) {
+
+.edit {
+    display: flex;
+    flex-direction: column
+}
+  }
+
+@media (min-width: 600px) {
+
+.edit {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr)
+}
+  }
+
+@media (min-width: 1024px) {
+
+.edit {
+    width: 60%;
+    margin: auto
+}
+  }
+
+@media (min-width: 320px) {
+
+.edit-item {
+      margin: 0;
+      color: #f4bd42;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      align-items: center;
+      text-align: center;
+      max-width: 360px
+  }
+  }
+
+@media (min-width: 600px) {
+
+.edit-item--create {
+        grid-column: 1 / span 3;
+        margin: auto
+    }
+  }
+
+@media (min-width: 600px) {
+
+.edit-name {
+      grid-row: 1 / span 2
+  }
+  }
+
+@media (min-width: 600px) {
+
+.edit-btn--create {
+        grid-row: 1 / span 2
+    }
   }

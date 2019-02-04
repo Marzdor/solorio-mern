@@ -1,0 +1,43 @@
+.edit {
+  @mixin atSmall {
+    display: flex;
+    flex-direction: column;
+  }
+  @mixin atMedium {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @mixin atLarge {
+    width: 60%;
+    margin: auto;
+  }
+  &-item {
+    @mixin atSmall {
+      margin: 0;
+      color: $sandyBrown;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      align-items: center;
+      text-align: center;
+      max-width: 360px;
+    }
+    &--create {
+      @mixin atMedium {
+        grid-column: 1 / span 3;
+        margin: auto;
+      }
+    }
+  }
+  &-name {
+    @mixin atMedium {
+      grid-row: 1 / span 2;
+    }
+  }
+  &-btn {
+    &--create {
+      @mixin atMedium {
+        grid-row: 1 / span 2;
+      }
+    }
+  }
+}
