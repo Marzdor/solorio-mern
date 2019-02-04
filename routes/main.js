@@ -9,8 +9,6 @@ router.use(express.urlencoded({ extended: true })); // to support URL-encoded bo
 const Info = require("../models/Info");
 const Beer = require("../models/Beer");
 
-// TODO Make GET routes for beer
-
 // Get Info
 // Public
 router.get("/info", (req, res) => {

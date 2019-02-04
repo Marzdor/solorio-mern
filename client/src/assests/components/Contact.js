@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import Form from "./Form";
-import Hours from "./Info";
+import Hours from "./Hours";
 
 class Contact extends Component {
   constructor(props) {

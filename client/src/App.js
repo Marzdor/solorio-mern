@@ -23,7 +23,7 @@ class App extends Component {
               <Route path="/about" component={About} />
               <Route exact path="/contact" component={Contact} />
               {/* TODO Make edit a Private Route */}
-              <Route path="edit" component={Edit} />
+              <Route path="/edit" component={Edit} />
             </Switch>
             <Footer />
           </div>
