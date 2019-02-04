@@ -1,16 +1,8 @@
 import React, { Component } from "react";
+
 import Form from "./Form";
-// TODO Get hours from DB
-import info from "../data/info.json";
-const hrElements = [];
-for (let day in info.hours) {
-  hrElements.push(
-    <p key={day} className="contact-hours">
-      {day + ": " + info.hours[day]}
-    </p>
-  );
-}
-//
+import Hours from "./Info";
+
 class Contact extends Component {
   constructor(props) {
     super(props);
@@ -21,10 +13,22 @@ class Contact extends Component {
         subscribe: false,
         subject: "",
         message: ""
-      }
+      },
+      info: {},
+      isLoading: true
     };
     this.handleFormChange = this.handleFormChange.bind(this);
   }
+  componentDidMount() {
+    fetch("/main/info")
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        this.setState({ info: data[0], isLoading: false });
+      });
+  }
+
   handleFormChange(e) {
     let value = this.state.contact;
     const target = e.target;
@@ -64,11 +68,11 @@ class Contact extends Component {
             CUCAMONGA CA 91730
           </p>
           <h2 className="contact-title-sub">Email</h2>
-          <p className="contact-text">{info.email}</p>
+          <p className="contact-text">{this.state.info.email}</p>
           <h2 className="contact-title-sub">Phone</h2>
-          <p className="contact-text">​{info.phone}</p>
+          <p className="contact-text">​{this.state.info.phone}</p>
           <h2 className="contact-title-sub">Tasting Room Hours</h2>
-          <div>{hrElements}</div>
+          <Hours hours={this.state.info.hours} />
         </div>
         <Form
           contact={this.state.contact}

@@ -1,6 +1,7 @@
 import React from "react";
 import beer from "../data/menu.json";
 // TODO Get beer data from DB
+// TODO Make Menu a class component
 const beerElements = [];
 for (let key in beer) {
   beerElements.push(
