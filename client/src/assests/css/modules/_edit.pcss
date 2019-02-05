@@ -8,7 +8,7 @@
     grid-template-columns: repeat(3, 1fr);
   }
   @mixin atLarge {
-    width: 60%;
+    width: 80%;
     margin: auto;
   }
   &-item {
@@ -20,6 +20,10 @@
       align-items: center;
       text-align: center;
       max-width: 360px;
+      margin: 10px;
+      border-left: 2.5px solid #9c1d24;
+      border-right: 2.5px solid #9c1d24;
+      border-radius: 10px;
     }
     &--create {
       @mixin atMedium {
@@ -34,8 +38,29 @@
     }
   }
   &-btn {
+    @mixin atSmall {
+      color: #000;
+      border-radius: 8px;
+      margin: 0 5px 0 0;
+      padding: 5px;
+      font-weight: 600;
+    }
+    &--edit {
+      @mixin atSmall {
+        background-color: #eea944;
+        border: 1px solid #af7010;
+      }
+    }
+    &--delete {
+      @mixin atSmall {
+        background-color: #d54b48;
+        border: 1px solid #681a17;
+      }
+    }
     &--create {
       @mixin atMedium {
+        background-color: #55b355;
+        border: 1px solid #337333;
         grid-row: 1 / span 2;
       }
     }

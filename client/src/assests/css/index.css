@@ -943,7 +943,7 @@ a {
 @media (min-width: 1024px) {
 
 .edit {
-    width: 60%;
+    width: 80%;
     margin: auto
 }
   }
@@ -957,7 +957,11 @@ a {
       grid-template-columns: 2fr 1fr;
       align-items: center;
       text-align: center;
-      max-width: 360px
+      max-width: 360px;
+      margin: 10px;
+      border-left: 2.5px solid #9c1d24;
+      border-right: 2.5px solid #9c1d24;
+      border-radius: 10px
   }
   }
 
@@ -976,9 +980,38 @@ a {
   }
   }
 
+@media (min-width: 320px) {
+
+.edit-btn {
+      color: #000;
+      border-radius: 8px;
+      margin: 0 5px 0 0;
+      padding: 5px;
+      font-weight: 600
+  }
+  }
+
+@media (min-width: 320px) {
+
+.edit-btn--edit {
+        background-color: #eea944;
+        border: 1px solid #af7010
+    }
+  }
+
+@media (min-width: 320px) {
+
+.edit-btn--delete {
+        background-color: #d54b48;
+        border: 1px solid #681a17
+    }
+  }
+
 @media (min-width: 600px) {
 
 .edit-btn--create {
+        background-color: #55b355;
+        border: 1px solid #337333;
         grid-row: 1 / span 2
     }
   }
