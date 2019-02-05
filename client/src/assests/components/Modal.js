@@ -1,11 +1,27 @@
-import React from "react";
+import React, { Component } from "react";
 
-// TODO Make pop-up form for editing a beer
-// TODO Make pop-up form for creating a beer
-// TODO Make pop-up form for editing info
+import Email from "./sub/modal/Email";
 
-const Modal = props => {
-  return <div>test</div>;
-};
+class Modal extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+    this.renderSwitch = this.renderSwitch.bind(this);
+  }
+  renderSwitch(param) {
+    switch (param) {
+      case "Email":
+        return <Email />;
+      default:
+        console.log("ERROR: " + param);
+        break;
+    }
+  }
+  render() {
+    console.log(this.props.config);
+
+    return <div>{this.renderSwitch(this.props.config.type)}</div>;
+  }
+}
 
 export default Modal;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Beer from "./Beer";
+import Beer from "./sub/menu/Beer";
 import Modal from "./Modal";
 
 class Edit extends Component {
@@ -8,7 +8,8 @@ class Edit extends Component {
     super(props);
     this.state = {
       modal: { active: false, mode: "", type: "" },
-      beer: []
+      beer: [],
+      info: {}
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -65,7 +66,13 @@ class Edit extends Component {
   render() {
     return (
       <div>
-        {this.state.modal.active && <Modal config={this.state.modal} />}
+        {this.state.modal.active && (
+          <Modal
+            config={this.state.modal}
+            info={this.state.info}
+            beer={this.state.beer}
+          />
+        )}
         <section>
           <div className="edit">
             <div className="edit-item">

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Beer from "./Beer";
+import Beer from "./sub/menu/Beer";
 
 class Menu extends Component {
   constructor(props) {
