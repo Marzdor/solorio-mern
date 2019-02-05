@@ -8,8 +8,18 @@ const Beer = props => {
       beerElements.push(
         <div className="edit-item" key={key}>
           <h2 className="edit-name">{props.beer[key].name}</h2>
-          <button>Edit</button>
-          <button>Delete</button>
+          <button
+            onClick={props.handleClick}
+            className="edit-btn edit-btn--edit"
+          >
+            Edit
+          </button>
+          <button
+            onClick={props.handleClick}
+            className="edit-btn edit-btn--delete"
+          >
+            Delete
+          </button>
         </div>
       );
     } else {
@@ -35,7 +45,12 @@ const Beer = props => {
       {props.edit && (
         <div className="edit-item edit-item--create">
           <h2 className="edit-name">New Beer</h2>
-          <button className="edit-btn--create">Create</button>
+          <button
+            onClick={props.handleClick}
+            className="edit-btn edit-btn--create"
+          >
+            Create
+          </button>
         </div>
       )}
       {beerElements}
