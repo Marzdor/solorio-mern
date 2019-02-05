@@ -851,7 +851,7 @@ a {
 @media (min-width: 1024px) {
 
 #video {
-    width: 80%;
+    width: 800px;
     height: 400px;
     margin: 50px auto
 }
