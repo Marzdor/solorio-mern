@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import Beer from "./sub/menu/Beer";
-import Modal from "./Modal";
+import Info from "./sub/modal/Info";
 
 class Edit extends Component {
   constructor(props) {
@@ -21,13 +21,6 @@ class Edit extends Component {
       .then(data => {
         this.setState({ beer: data });
       });
-    fetch("main/info")
-      .then(res => {
-        return res.json();
-      })
-      .then(data => {
-        this.setState({ info: data[0] });
-      });
   }
   handleClick(e) {
     const type = e.target.previousElementSibling.innerHTML;
@@ -36,9 +29,7 @@ class Edit extends Component {
     switch (mode) {
       case "Edit":
         switch (type) {
-          case "Email":
-          case "Phone":
-          case "Hours":
+          case "Info":
             config = { active: true, mode: mode, type: type };
             break;
           default:
@@ -62,39 +53,27 @@ class Edit extends Component {
     }
     this.setState({ modal: config });
   }
+  renderSwitch(type) {
+    switch (type) {
+      case "Info":
+        return <Info />;
+
+      default:
+        console.log("ERROR: " + type);
+        break;
+    }
+  }
 
   render() {
     return (
       <div>
         {this.state.modal.active && (
-          <Modal
-            config={this.state.modal}
-            info={this.state.info}
-            beer={this.state.beer}
-          />
+          <div>{this.renderSwitch(this.state.modal.type)}</div>
         )}
         <section>
           <div className="edit">
             <div className="edit-item">
-              <h2>Email</h2>
-              <button
-                onClick={this.handleClick}
-                className="edit-btn edit-btn--edit"
-              >
-                Edit
-              </button>
-            </div>
-            <div className="edit-item">
-              <h2>Phone</h2>
-              <button
-                onClick={this.handleClick}
-                className="edit-btn edit-btn--edit"
-              >
-                Edit
-              </button>
-            </div>
-            <div className="edit-item">
-              <h2>Hours</h2>
+              <h2>Info</h2>
               <button
                 onClick={this.handleClick}
                 className="edit-btn edit-btn--edit"
