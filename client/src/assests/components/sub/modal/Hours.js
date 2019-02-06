@@ -10,6 +10,7 @@ const Hours = props => {
           {day.charAt(0).toUpperCase() + day.slice(1)}
           <input
             id={"form-" + day}
+            name={day}
             onChange={props.handleFormChange}
             type="text"
             placeholder="Enter Hours Here."

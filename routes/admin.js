@@ -11,7 +11,37 @@ router.use(express.urlencoded({ extended: true })); // to support URL-encoded bo
 const Info = require("../models/Info");
 const Beer = require("../models/Beer");
 
-// TODO Make POST routes for info
+// Update A Info
+// Private
+router.post("/info", auth, (req, res) => {
+  const hours = {
+    monday: req.body.monday,
+    tuesday: req.body.tuesday,
+    wednesday: req.body.wednesday,
+    thursday: req.body.thursday,
+    friday: req.body.friday,
+    saturday: req.body.saturday,
+    sunday: req.body.sunday
+  };
+  const newData = {
+    email: req.body.email,
+    phone: req.body.phone,
+    hours: hours
+  };
+
+  Info.findByIdAndUpdate(
+    "5c56650bfb6fc035679226ba",
+    newData,
+    { new: true },
+    err => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.redirect("/edit");
+      }
+    }
+  );
+});
 
 // Update A Beer
 // Private
@@ -22,7 +52,7 @@ router.post("/beer=:id", auth, (req, res) => {
     abv: req.body.abv,
     desc: req.body.desc
   };
-  console.log(req);
+
   Beer.findByIdAndUpdate(req.params.id, newData, { new: true }, err => {
     if (err) {
       console.log(err);

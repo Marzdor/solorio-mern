@@ -7,7 +7,6 @@ class Info extends Component {
     super(props);
     this.state = { hours: {}, email: "", phone: "" };
     this.handleFormChange = this.handleFormChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount() {
     fetch("main/info")
@@ -51,19 +50,14 @@ class Info extends Component {
     }
   }
 
-  handleSubmit(e) {
-    console.log(e);
-    e.preventDefault();
-    // TODO Make Data submit
-  }
-
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="modal">
+      <form action={"admin/info"} method="post" className="modal">
         <label className="modal-item">
           Email
           <input
             id="form-email"
+            name="email"
             onChange={this.handleFormChange}
             type="email"
             placeholder="Enter Email Here."
@@ -75,6 +69,7 @@ class Info extends Component {
           Phone Number
           <input
             id="form-phone"
+            name="phone"
             onChange={this.handleFormChange}
             type="phone"
             placeholder="Enter Phone Number Here."
