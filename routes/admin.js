@@ -44,5 +44,12 @@ router.post("/beer/create", auth, (req, res) => {
 
   newBeer.save().then(() => res.redirect("/edit"));
 });
+// Delete A Beer
+// Private
+router.delete("/beer=:id", auth, (req, res) => {
+  Beer.findById(req.params.id)
+    .then(beer => beer.remove().then(() => res.json({ success: true })))
+    .catch(err => res.status(404).json({ success: false }));
+});
 
 module.exports = router;

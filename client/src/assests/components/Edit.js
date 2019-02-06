@@ -56,10 +56,24 @@ class Edit extends Component {
         config = { active: false, mode: "", type: "", id: "" };
         break;
       case "Delete":
-        const del = window.confirm("Delete " + type + " from database?");
+        const beerName = e.target.parentElement.firstChild.innerHTML;
+        const del = window.confirm("Delete " + beerName + " from database?");
+        let toDel = "";
+
+        this.state.beer.forEach(beer => {
+          if (beer.name === beerName) {
+            toDel = beer._id;
+          }
+        });
         if (del) {
-          console.log("User wants to continue!");
-          // TODO Add Delete
+          fetch("admin/beer=" + toDel, {
+            method: "delete"
+          }).then(response =>
+            response.json().then(json => {
+              return json;
+            })
+          );
+          window.location.reload();
         }
         break;
       default:
