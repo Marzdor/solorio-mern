@@ -36,20 +36,16 @@ class Edit extends Component {
             config = { active: true, mode: mode, type: type, id: "" };
             break;
           default:
-            const id = this.state.beer.find(beer => {
+            this.state.beer.forEach(beer => {
               if (beer.name === type) {
-                return beer;
-              } else {
-                return "Not Found";
+                config = {
+                  active: true,
+                  mode: mode,
+                  type: "Beer-Edit",
+                  id: beer._id
+                };
               }
             });
-
-            config = {
-              active: true,
-              mode: mode,
-              type: "Beer-Edit",
-              id: id._id
-            };
             break;
         }
         break;
