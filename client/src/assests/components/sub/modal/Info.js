@@ -7,6 +7,7 @@ class Info extends Component {
     super(props);
     this.state = { hours: {}, email: "", phone: "" };
     this.handleFormChange = this.handleFormChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount() {
     fetch("main/info")
@@ -50,10 +51,16 @@ class Info extends Component {
     }
   }
 
+  handleSubmit(e) {
+    console.log(e);
+    e.preventDefault();
+    // TODO Make Data submit
+  }
+
   render() {
     return (
-      <form className="edit">
-        <label>
+      <form onSubmit={this.handleSubmit} className="modal">
+        <label className="modal-item">
           Email
           <input
             id="form-email"
@@ -64,7 +71,7 @@ class Info extends Component {
             required
           />
         </label>
-        <label>
+        <label className="modal-item">
           Phone Number
           <input
             id="form-phone"
@@ -79,8 +86,13 @@ class Info extends Component {
           handleFormChange={this.handleFormChange}
           hours={this.state.hours}
         />
-        <input type="submit" value="Submit" />
-        <button>Cancel</button>
+        <button
+          className="edit-btn edit-btn--create"
+          type="submit"
+          value="Submit"
+        >
+          Update
+        </button>
       </form>
     );
   }

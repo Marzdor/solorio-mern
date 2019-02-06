@@ -6,7 +6,7 @@ const Hours = props => {
   for (let day in props.hours) {
     hrElements.push(
       <div key={day}>
-        <label>
+        <label className="modal-item">
           {day.charAt(0).toUpperCase() + day.slice(1)}
           <input
             id={"form-" + day}

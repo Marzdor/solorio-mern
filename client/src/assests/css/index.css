@@ -936,7 +936,9 @@ a {
 
 .edit {
     display: grid;
-    grid-template-columns: repeat(3, 1fr)
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+    margin: 0 auto
 }
   }
 
@@ -944,21 +946,17 @@ a {
 
 .edit {
     width: 80%;
-    margin: auto
+    max-width: 900px;
+    grid-template-columns: repeat(3, 1fr)
 }
   }
 
 @media (min-width: 320px) {
 
 .edit-item {
-      margin: 0;
       color: #f4bd42;
-      display: grid;
-      grid-template-columns: 2fr 1fr;
       align-items: center;
       text-align: center;
-      max-width: 360px;
-      margin: 10px;
       border-left: 2.5px solid #9c1d24;
       border-right: 2.5px solid #9c1d24;
       border-radius: 10px
@@ -967,9 +965,33 @@ a {
 
 @media (min-width: 600px) {
 
+.edit-item {
+      max-width: 250px;
+      min-width: 250px;
+      margin: 10px auto
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.edit-item {
+      display: grid;
+      grid-template-columns: 2fr 1fr
+  }
+  }
+
+@media (min-width: 600px) {
+
 .edit-item--create {
-        grid-column: 1 / span 3;
+        grid-column: 1 / span 2;
         margin: auto
+    }
+  }
+
+@media (min-width: 1024px) {
+
+.edit-item--create {
+        grid-column: 1 / span 3
     }
   }
 
@@ -985,7 +1007,7 @@ a {
 .edit-btn {
       color: #000;
       border-radius: 8px;
-      margin: 0 5px 0 0;
+      margin: 5px;
       padding: 5px;
       font-weight: 600
   }
@@ -1007,11 +1029,63 @@ a {
     }
   }
 
-@media (min-width: 600px) {
+@media (min-width: 320px) {
 
 .edit-btn--create {
         background-color: #55b355;
         border: 1px solid #337333;
         grid-row: 1 / span 2
+    }
+  }
+
+@media (min-width: 320px) {
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    margin: 5px
+}
+  }
+
+@media (min-width: 600px) {
+
+.modal {
+    width: 400px;
+    margin: 10px auto
+}
+  }
+
+@media (min-width: 1024px) {
+
+.modal {
+    width: 600px;
+    margin: auto
+}
+  }
+
+@media (min-width: 320px) {
+
+.modal-item {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      text-align: right;
+      margin: 5px 0;
+      color: #f4bd42;
+      font-weight: 700
+  }
+  }
+
+@media (min-width: 1024px) {
+
+.modal-item {
+      display: grid;
+      grid-template-columns: 200px 400px
+  }
+  }
+
+@media (min-width: 320px) {
+
+.modal-item input {
+        margin: 0 0 0 10px
     }
   }

@@ -1,0 +1,34 @@
+.modal {
+  @mixin atSmall {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+  }
+  @mixin atMedium {
+    width: 400px;
+    margin: 10px auto;
+  }
+  @mixin atLarge {
+    width: 600px;
+    margin: auto;
+  }
+  &-item {
+    @mixin atSmall {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      text-align: right;
+      margin: 5px 0;
+      color: $sandyBrown;
+      font-weight: 700;
+    }
+    @mixin atLarge {
+      display: grid;
+      grid-template-columns: 200px 400px;
+    }
+    & input {
+      @mixin atSmall {
+        margin: 0 0 0 10px;
+      }
+    }
+  }
+}

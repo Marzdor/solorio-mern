@@ -40,6 +40,9 @@ class Edit extends Component {
       case "Create":
         config = { active: true, mode: mode, type: "Beer" };
         break;
+      case "Cancel":
+        config = { active: false, mode: "", type: "" };
+        break;
       case "Delete":
         const del = window.confirm("Delete " + type + " from database?");
         if (del) {
@@ -56,7 +59,7 @@ class Edit extends Component {
   renderSwitch(type) {
     switch (type) {
       case "Info":
-        return <Info />;
+        return <Info handleCancel={this.state.handleClick} />;
 
       default:
         console.log("ERROR: " + type);
@@ -67,28 +70,36 @@ class Edit extends Component {
   render() {
     return (
       <div>
-        {this.state.modal.active && (
-          <div>{this.renderSwitch(this.state.modal.type)}</div>
-        )}
-        <section>
-          <div className="edit">
-            <div className="edit-item">
-              <h2>Info</h2>
-              <button
-                onClick={this.handleClick}
-                className="edit-btn edit-btn--edit"
-              >
-                Edit
-              </button>
-            </div>
+        {this.state.modal.active ? (
+          <div className="modal">
+            {this.renderSwitch(this.state.modal.type)}
+            <button
+              onClick={this.handleClick}
+              className="edit-btn edit-btn--edit"
+            >
+              Cancel
+            </button>
           </div>
-        </section>
-        <Beer
-          handleClick={this.handleClick}
-          edit={true}
-          beer={this.state.beer}
-        />
-        ;
+        ) : (
+          <section>
+            <div className="edit">
+              <div className="edit-item">
+                <h2>Info</h2>
+                <button
+                  onClick={this.handleClick}
+                  className="edit-btn edit-btn--edit"
+                >
+                  Edit
+                </button>
+              </div>
+            </div>
+            <Beer
+              handleClick={this.handleClick}
+              edit={true}
+              beer={this.state.beer}
+            />
+          </section>
+        )}
       </div>
     );
   }
