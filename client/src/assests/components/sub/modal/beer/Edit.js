@@ -10,7 +10,6 @@ class Edit extends Component {
       style: ""
     };
     this.handleFormChange = this.handleFormChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount() {
     fetch("main/beer=" + this.props.beer)
@@ -50,18 +49,18 @@ class Edit extends Component {
     }
   }
 
-  handleSubmit(e) {
-    console.log(e);
-    e.preventDefault();
-    // TODO Make Data submit
-  }
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="modal">
+      <form
+        action={"admin/beer=" + this.props.beer}
+        method="post"
+        className="modal"
+      >
         <label className="modal-item">
           Name
           <input
             id="form-name"
+            name="name"
             onChange={this.handleFormChange}
             type="text"
             placeholder="Enter Name Here."
@@ -73,6 +72,7 @@ class Edit extends Component {
           Style
           <input
             id="form-style"
+            name="style"
             onChange={this.handleFormChange}
             type="text"
             placeholder="Enter Style Here."
@@ -84,6 +84,7 @@ class Edit extends Component {
           Abv
           <input
             id="form-abv"
+            name="abv"
             onChange={this.handleFormChange}
             type="text"
             placeholder="Enter Abv Here."
@@ -95,6 +96,7 @@ class Edit extends Component {
           Description
           <input
             id="form-desc"
+            name="desc"
             onChange={this.handleFormChange}
             type="text"
             placeholder="Enter Description Here."
@@ -102,11 +104,7 @@ class Edit extends Component {
             required
           />
         </label>
-        <button
-          className="edit-btn edit-btn--create"
-          type="submit"
-          value="Submit"
-        >
+        <button className="edit-btn edit-btn--create" type="Submit">
           Update
         </button>
       </form>

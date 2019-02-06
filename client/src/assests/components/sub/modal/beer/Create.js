@@ -10,7 +10,6 @@ class Create extends Component {
       style: ""
     };
     this.handleFormChange = this.handleFormChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleFormChange(e) {
@@ -36,18 +35,14 @@ class Create extends Component {
     }
   }
 
-  handleSubmit(e) {
-    console.log(e);
-    e.preventDefault();
-    // TODO Make Data submit
-  }
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="modal">
+      <form action={"admin/beer/create"} method="post" className="modal">
         <label className="modal-item">
           Name
           <input
-            id="form-email"
+            id="form-name"
+            name="name"
             onChange={this.handleFormChange}
             type="text"
             placeholder="Enter Name Here."
@@ -59,6 +54,7 @@ class Create extends Component {
           Style
           <input
             id="form-style"
+            name="style"
             onChange={this.handleFormChange}
             type="text"
             placeholder="Enter Style Here."
@@ -70,6 +66,7 @@ class Create extends Component {
           Abv
           <input
             id="form-abv"
+            name="abv"
             onChange={this.handleFormChange}
             type="text"
             placeholder="Enter Abv Here."
@@ -80,7 +77,8 @@ class Create extends Component {
         <label className="modal-item">
           Description
           <input
-            id="form-style"
+            id="form-desc"
+            name="desc"
             onChange={this.handleFormChange}
             type="text"
             placeholder="Enter Description Here."
