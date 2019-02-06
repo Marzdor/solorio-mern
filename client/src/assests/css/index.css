@@ -447,7 +447,7 @@ a {
 
 .menu-container {
       display: grid;
-      grid-template-columns: 1fr 1fr
+      grid-template-columns: repeat(2, 1fr)
   }
   }
 
@@ -455,6 +455,7 @@ a {
 
 .menu-container {
       width: 80%;
+      grid-template-columns: repeat(3, 1fr);
       margin: auto
   }
   }
@@ -465,7 +466,7 @@ a {
         margin: 10px 0;
         color: #f4bd42;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
         justify-items: center;
         align-items: center;
         text-align: center
