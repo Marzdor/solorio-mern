@@ -21,4 +21,10 @@ router.get("/beer", (req, res) => {
   Beer.find().then(beer => res.json(beer));
 });
 
+// Get Beer By ID
+// Public
+router.get("/beer=:id", (req, res) => {
+  Beer.findById(req.params.id).then(beer => res.json(beer));
+});
+
 module.exports = router;
