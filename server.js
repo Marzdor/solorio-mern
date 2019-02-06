@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 
 const main = require("./routes/main");
+const admin = require("./routes/admin");
 
 const app = express();
 
@@ -20,10 +21,7 @@ if (process.env.NODE_ENV === "production") {
 
 // Connect to Mongo
 mongoose
-  .connect(
-    db,
-    { useNewUrlParser: true }
-  )
+  .connect(db, { useNewUrlParser: true })
   .then(() => console.log("MongoDB Connected..."))
   .catch(err => console.log(err));
 
@@ -31,6 +29,7 @@ mongoose.set("useFindAndModify", false);
 
 // Use routes
 app.use("/main", main);
+app.use("/admin", admin);
 
 // Serve static assests if in production
 if (process.env.NODE_ENV === "production") {

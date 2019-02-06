@@ -18,7 +18,9 @@ router.get("/info", (req, res) => {
 // Get All Beers
 // Public
 router.get("/beer", (req, res) => {
-  Beer.find().then(beer => res.json(beer));
+  Beer.find()
+    .sort({ name: 1 })
+    .then(beer => res.json(beer));
 });
 
 // Get Beer By ID
