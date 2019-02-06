@@ -25,9 +25,13 @@ class Edit extends Component {
       });
   }
   handleClick(e) {
-    const type = e.target.previousElementSibling.innerHTML;
+    const type = e.target.previousElementSibling.innerHTML.replace(
+      /&amp;/g,
+      "&"
+    );
     const mode = e.target.innerHTML;
 
+    console.log(type + " " + mode);
     let config = {};
     switch (mode) {
       case "Edit":
