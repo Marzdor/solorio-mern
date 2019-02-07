@@ -24,26 +24,20 @@ const Beer = props => {
       );
     } else {
       beerElements.push(
-        <div className="menu-container-beer" key={key}>
-          <h2 className="menu-title">{props.beer[key].name}</h2>
-          <h3 className="menu-title-sub">Style</h3>
-          <p className="menu-text">{props.beer[key].style}</p>
-          <h3 className="menu-title-sub">ABV</h3>
-          <p className="menu-text">{props.beer[key].abv}%</p>
-
-          <div className="menu-image">
-            <img
-              src="https://via.placeholder.com/175x150"
-              alt={"Image of " + props.beer[key].name + " beer."}
-            />
-            <p className="menu-text">{props.beer[key].desc}</p>
-          </div>
+        <div className="menu-beer" key={key}>
+          <h2 className="menu-beer-name">{props.beer[key].name}</h2>
+          <h3 className="menu-beer-title">Style</h3>
+          <p className="menu-beer-text">{props.beer[key].style}</p>
+          <h3 className="menu-beer-title">ABV</h3>
+          <p className="menu-beer-text">{props.beer[key].abv}%</p>
+          <h3 className="menu-beer-title menu-beer-title--desc">Description</h3>
+          <p className="menu-beer-desc">{props.beer[key].desc}</p>
         </div>
       );
     }
   }
   return (
-    <section className={!props.edit ? "menu-container" : "edit"}>
+    <section className={!props.edit ? "menu" : "edit"}>
       {props.edit && (
         <div className="edit-item edit-item--create">
           <h2 className="edit-name">New Beer</h2>
