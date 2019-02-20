@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import Form from "./sub/contact/Form";
-import Hours from "./sub/contact/Hours";
 
 class Contact extends Component {
   constructor(props) {
@@ -20,12 +19,12 @@ class Contact extends Component {
     this.handleFormChange = this.handleFormChange.bind(this);
   }
   componentDidMount() {
-    fetch("/main/info")
+    fetch("/main/info/contact")
       .then(res => {
         return res.json();
       })
       .then(data => {
-        this.setState({ info: data[0], isLoading: false });
+        this.setState({ info: data, isLoading: false });
       });
   }
 
@@ -71,8 +70,6 @@ class Contact extends Component {
           <p className="contact-text">{this.state.info.email}</p>
           <h2 className="contact-title-sub">Phone</h2>
           <p className="contact-text">​{this.state.info.phone}</p>
-          <h2 className="contact-title-sub">Tasting Room Hours</h2>
-          <Hours hours={this.state.info.hours} />
         </div>
         <Form
           contact={this.state.contact}
