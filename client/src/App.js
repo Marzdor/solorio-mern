@@ -13,7 +13,7 @@ import Edit from "./assests/components/Edit";
 class App extends Component {
   render() {
     return (
-      <article className="container">
+      <main className="container">
         <Router>
           <div>
             <Header handleNavClick={this.handleNavClick} />
@@ -28,7 +28,7 @@ class App extends Component {
             <Footer />
           </div>
         </Router>
-      </article>
+      </main>
     );
   }
 }
