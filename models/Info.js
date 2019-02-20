@@ -4,15 +4,15 @@ const Schema = mongoose.Schema;
 // Create Schema
 const InfoSchema = new Schema(
   {
-    email: {
-      type: String,
+    contact: {
+      type: Object,
       required: true
     },
-    phone: {
-      type: String,
+    events: {
+      type: Array,
       required: true
     },
-    hours: {
+    days: {
       type: Object,
       required: true
     }
