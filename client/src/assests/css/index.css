@@ -1130,3 +1130,35 @@ a {
         margin: 0 0 0 10px
     }
   }
+
+.week {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  text-align: center;
+  width: 70%;
+  margin: 75px auto;
+  padding: 20px;
+  border: 5px solid #1a1115;
+  background-color: #34252d;
+}
+
+.day {
+  padding: 20px;
+  background-color: #291d23;
+  color: #f4bd42;
+  display: flex;
+  flex-direction: column;
+}
+
+.day-name {
+    text-transform: capitalize;
+    margin: 0 0 5px 0;
+  }
+
+.day-title {
+    margin: 10px 0;
+  }
+
+.day-text {
+    margin: 0;
+  }
