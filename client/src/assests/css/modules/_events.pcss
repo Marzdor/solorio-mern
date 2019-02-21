@@ -1,0 +1,16 @@
+.events {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  &-event {
+    color: $sandyBrown;
+    background-color: $background;
+    padding: 10px;
+  }
+  &-header {
+    padding: 10px;
+    margin: 0;
+    grid-column: 1 / -1;
+    color: $sandyBrown;
+    background-color: $background;
+  }
+}

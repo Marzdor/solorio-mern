@@ -12,5 +12,6 @@
 @import "modules/_footer.pcss";
 @import "modules/_edit.pcss";
 @import "modules/_modal.pcss";
-@import "modules/_week.pcss";
+@import "modules/_home.pcss";
 @import "modules/_day.pcss";
+@import "modules/_events.pcss";

@@ -1,17 +1,42 @@
 .day {
-  padding: 20px;
-  background-color: $background;
-  color: $sandyBrown;
-  display: flex;
-  flex-direction: column;
+  @mixin atSmall {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding: 5px 20px;
+    background-color: $background;
+    color: $sandyBrown;
+  }
+  @mixin atMedium {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
   &-name {
+    @mixin atSmall {
+      grid-column: 1 / span 2;
+    }
     text-transform: capitalize;
     margin: 0 0 5px 0;
   }
   &-title {
+    @mixin atSmall {
+      justify-self: start;
+    }
     margin: 10px 0;
   }
   &-text {
     margin: 0;
+  }
+  &--closed {
+    @mixin atSmall {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+    @mixin atMedium {
+      flex-direction: column;
+      justify-content: start;
+    }
   }
 }

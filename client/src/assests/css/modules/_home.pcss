@@ -1,0 +1,25 @@
+.home {
+  @mixin atSmall {
+    margin: 10px auto;
+    width: 100%;
+  }
+  @mixin atMedium {
+    display: grid;
+    width: 90%;
+  }
+  @mixin atLarge {
+    width: 70%;
+    margin: 25px auto;
+  }
+  padding: 20px;
+  text-align: center;
+  border: 5px solid $backgroundDarker;
+  background-color: $backgroundLighter;
+  &-week {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  &-event {
+    display: flex;
+    flex-direction: column;
+  }
+}
